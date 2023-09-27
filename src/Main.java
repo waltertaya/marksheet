@@ -1,57 +1,46 @@
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-
+   public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String sums = new String(new char[80]).replace('\0', '_');
-        Integer[] sNo = new Integer[3];
-        // Integer[] total = new Integer[3];
-        Integer i,j,t1 = 0,t2 = 0,t3 = 0,t4 = 0,t5 = 0;
-        Integer[] S5 = new Integer[3];
-        Integer[] S1 = new Integer[3];
-        Integer[] S2 = new Integer[3];
-        Integer[] S3 = new Integer[3];
-        Integer[] S4 = new Integer[3];
-        String[] name = new String[3];
-        // name[0] = "Kathir";
-        for(i = 0;i < 3;i++) {
-            System.out.print("Enter student number: ");
-            sNo[i] = input.nextInt();
-            System.out.print("Enter student name: ");
-            name[i] = input.next();
-            System.out.print("Enter sub1: ");
-            S1[i] = input.nextInt();
-            System.out.print("Enter sub2: ");
-            S2[i] = input.nextInt();
-            System.out.print("Enter sub3: ");
-            S3[i] = input.nextInt();
-            System.out.print("Enter sub4: ");
-            S4[i] = input.nextInt();
-            System.out.print("Enter sub5: ");
-            S5[i] = input.nextInt();
+        int total = 0;
+        float average;
+        int i = 0;
+        int[] scores = new int[4];
+        String[] unitCode = new String[4];
+        System.out.println("Enter your the Unit code and the score.");
+        String[] unitName = {"Database","Systems","Algorithm","Statistics"};
+        for (i=0;i < 4; i++) {
+             System.out.print("Score: ");
+             scores[i] = input.nextInt();
+             total += scores[i];
+             System.out.print("Unit code: ");
+             unitCode[i] = input.next();
         }
-        for(i = 0;i < 3;i++) {
-            t1 += S1[i];
-            t2 += S2[i];
-            t3 += S3[i];
-            t4 += S4[i];
-            t5 += S5[i];
-
+        System.out.println("                         Department of Computer Science");
+        System.out.println("                             End Semester Results");
+        String dot = new String(new char[80]).replace('\0','.');
+        System.out.println(dot);
+        System.out.println("|Name:-Walter Onyango        |Roll_No: C026-01-0978/2022           Semester: 2.2");
+        String line = new String(new char[80]).replace('\0','_');
+        System.out.println(line);
+        System.out.println("|Unit code                   |Unit Name                            Score");
+        System.out.println(dot);
+        for (i = 0; i < 4; i++) {
+             System.out.println("|"+unitCode[i]+"                     |"+unitName[i]+"\t\t\t\t\t\t\t\t"+scores[i]);
         }
-        Integer[] average = {(t1/3),(t2/3),(t3/3),(t4/3),(t5/3)};
-        System.out.println("Welcome to Student Mark List Application");
-
-        System.out.println(sums);
-        System.out.println("sNo		Student Name		Sub1		Sub2		Sub3		Sub4		Sub5		Total");
-        System.out.println(sums);
-        for (i = 0;i < 3;i++) {
-            for(j = 0;j < 8;j++) {
-                System.out.println(sNo[j] +"	" + name[j] +"	"+ S1[j]+"	"+S2[j]+"	"+S3[j]+"	"+S4[j]+"	"+S5[j]+"		"+(S1[j]+S2[j]+S3[j]+S4[j]+S5[j])+"		"+((S1[j]+S2[j]+S3[j]+S4[j]+S5[j]/5)));
-            }
-        }
-        for(i = 0;i < 5;i++) {
-            System.out.print("             "+average[i] + "		");
-        }
-        System.out.println(sums);
-    }
+        average = (float)total/4;
+        System.out.println("|Average                                                           |"+ average);
+        System.out.println(dot);
+        System.out.println("|Average                                                           |A");
+        System.out.println(dot);
+        System.out.println("                                                    Recommendation |");
+        System.out.println(dot);
+        System.out.println("Grading Criteria                    Overall Grade(A-D)             Recommend Pass");
+        System.out.println("70-100          A");
+        System.out.println("60-69           B");
+        System.out.println("50-59           C");
+        System.out.println("40-49           D");
+        System.out.println("Below 40        F");
+        System.out.println("70-100          A");
+   }
 }
